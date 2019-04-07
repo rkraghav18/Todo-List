@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h2 #{title}
+	br
+	ul.list-group
+		each item,i in todoslist
+			li.list-group-item
+					p #{item.todo}
+					if(item.isDone)
+						p(style="color:green") Completed!!
+						a.btn.btn-danger.delete-article(href='/items/delete/'+item._id,style="float: right") Delete 
+						a.btn.disabled(href='/items/edit/'+item._id,style="float: right") Edit
+					else
+						a.btn.btn-danger.delete-article(href='/items/delete/'+item._id,style="float: right") Delete 
+						a.btn.btn-default(href='/items/edit/'+item._id,style="float: right") Edit

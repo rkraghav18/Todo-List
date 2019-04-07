@@ -1,0 +1,25 @@
+doctype html
+html
+	head
+		title Todo List
+		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+		link(rel='stylesheet', href='/check.css')
+	body
+		.container
+			br
+			h3 #{title}
+			form(method='POST',action='/items/add')
+				#form-group
+					br
+					label Username:
+					input.form-control(name='username',type='text')
+				#form-group
+					br
+					label Task:
+					input.form-control(name='todo',type='text')
+				#form-group
+					br
+					label Completed:
+					input.form-control(name='isDone',type='checkbox') 
+				br
+				input.btn.btn-primary(type='submit',value='Submit')
